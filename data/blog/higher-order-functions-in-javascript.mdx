@@ -1,0 +1,82 @@
+---
+title: 'Higher order functions in Javascript'
+date: '2020-12-03'
+tags: ['code', 'javascript', 'howto', 'Programming']
+draft: false
+summary: 'Learn about higher order functions in modern JavaScript'
+---
+
+A function that accepts and/or returns another function is called a higher-order function.
+
+It’s higher-order because instead of strings, numbers, or booleans, it goes higher to operate on functions.
+
+With functions in JavaScript, you can
+
+- Store them as variables
+- Use them in arrays
+- Assign them as object properties (methods)
+- Pass them as arguments
+- Return them from other functions
+
+## Example:
+
+### Strings as arguments:
+
+```JAVASCRIPT
+      sayHi = (name) => `Hi, ${name}!`;
+      result = sayHi('Khalil');
+      console.log(result); // 'Hi, Khalil!
+```
+
+### Numbers as arguments:
+
+```JAVASCRIPT
+      double = (x) => x * 2;
+      result = double(4);
+      console.log(result); // 8
+```
+
+### Booleans as arguments:
+
+```JAVASCRIPT
+      getClearance = (allowed) => allowed ?
+      'Access granted' : 'Access denied';
+      result1 = getClearance(true);
+      result2 = getClearance(false);
+      console.log(result1); // 'Access granted'
+      console.log(result2); // 'Access denied'
+```
+
+### Objects as arguments:
+
+```JAVASCRIPT
+      getFirstName = (obj)  => obj.firstName;
+      result = getFirstName({
+        firstName: 'Khalil'
+      });
+      console.log(result); // 'Khalil'
+```
+
+### Arrays as arguments:
+
+```JAVASCRIPT
+     len = (array) => array.length;
+     result = len([1, 2, 3]);
+     console.log(result); // 3
+```
+
+### Functions as Arguments:
+
+```JAVASCRIPT
+     isEven = (num) => num % 2 === 0;
+     result = [1, 2, 3, 4].filter(isEven);
+     console.log(result); // [2, 4]
+```
+
+### Returning Functions::
+
+```JAVASCRIPT
+    add = (x) => (y) => x + y;
+    result = add(10)(20);
+    console.log(result); // 30
+```

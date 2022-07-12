@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="36.8" height="42.7" viewBox="0 0 1000 1000" xml:space="preserve">
+    <desc>Created with Fabric.js 3.5.0</desc>
+    <defs></defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="#ffffff" />
+    <g transform="matrix(1 0 0 1 497.2127 394.6445)" style="filter: url(#SVGID_1);" id="91555">
+        <filter id="SVGID_1" y="-20.61%" height="141.22%" x="-20.54%" width="141.07999999999998%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="0" />
+            <feOffset dx="5" dy="4" result="oBlur" />
+            <feFlood flood-color="rgb(174,169,201)" flood-opacity="1" />
+            <feComposite in2="oBlur" operator="in" />
+            <feMerge>
+                <feMergeNode />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+
+        <path xml:space="preserve" font-family="Alex Brush" font-size="578" font-weight="normal" style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1; white-space: pre;" d="M-411.99 33.60L-411.99 33.60Q-411.99 25.51-381.93-15.53L-381.93-15.53L-343.79-67.55Q-339.16-73.90-333.96-73.90Q-328.76-73.90-328.76-70.44L-328.76-70.44Q-328.76-61.77-385.98 18.00L-385.98 18.00Q-329.91 89.67-329.91 96.32Q-329.91 102.96-335.69 102.96L-335.69 102.96L-340.32 100.65Q-359.97 72.91-410.26 37.07L-410.26 37.07Q-411.99 35.92-411.99 33.60ZM46.94-221.87L46.94-221.87Q53.30-221.87 57.06-218.11Q60.81-214.36 60.81-210.31Q60.81-206.27 55.61-199.91L55.61-199.91Q-22.42-110.32-123.28 25.22Q-224.14 160.76-242.64 209.32L-242.64 209.32Q-246.10 219.72-246.10 229.26Q-246.10 238.79-241.48 240.82Q-236.86 242.84-239.75 247.46L-239.75 247.46Q-243.79 253.24-251.88 253.24L-251.88 253.24Q-261.71 253.24-261.71 234.17Q-261.71 215.10-248.99 180.42L-248.99 180.42Q-231.08 131.29-98.14-47.32L-98.14-47.32Q33.07-221.87 46.94-221.87ZM204.16-0.50L204.16-0.50Q204.16 11.06 135.38 100.65L135.38 100.65Q130.75 107.01 125.84 107.01Q120.93 107.01 120.93 103.54L120.93 103.54Q120.93 94.87 178.15 15.11L178.15 15.11Q121.50-57.14 121.50-63.50Q121.50-69.86 127.86-69.86L127.86-69.86L132.49-67.55Q153.29-39.80 202.42-3.97L202.42-3.97Q204.16-3.39 204.16-0.50Z" />
+    </g>
+</svg>

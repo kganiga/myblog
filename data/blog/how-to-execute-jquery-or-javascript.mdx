@@ -1,0 +1,35 @@
+---
+title: 'How to execute jQuery or Javascript inside a blogger blog post'
+date: '2021-06-15'
+tags: ['code', 'javascript', 'howto', 'jQuery']
+draft: false
+summary: 'Learn how to run/execute javascript/jQuery scripts inside googles blogger blog post'
+---
+
+How to run JavaScript/jQuery code in my Blogger article was a question I had on my mind for a very long time. After doing some investigation, I discovered how to run the script inside a Blogger post.
+
+Blogger post editor allows to add inline HTML code for markup, we are going to use this feature to achieve our goal.
+
+- Create a blogger post, by clicking New Post on Blogger dashboard.
+- Give your post title.
+- On WYSIWYG editor, click on the Pencil button and select the HTML view.
+- Insert your JavaScript/jQuery code inside script tag. \
+   E.g : <script> PLACE YOUR JAVASCRIPT/JQUERY CODE HERE. </script>
+
+### Sample Script :
+
+```JavaScript
+function moveRight(){
+        $("#b").animate({left: "+=300"}, 2000,moveLeft)
+    }
+
+function moveLeft(){
+        $("#b").animate({left: "-=300"}, 2000,moveRight)
+    }
+
+$(document).ready(function() {
+
+       moveRight();
+
+});
+```

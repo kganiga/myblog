@@ -1,0 +1,35 @@
+---
+title: 'Setup Gmail as SMTP server for local AEM development environment'
+date: '2022-03-02'
+tags: ['AEM', 'howto', 'Tutorial']
+draft: false
+summary: 'Learn how to setup Gmail as SMTP server in local aem environment to send emails.'
+---
+
+In this tutorial I am going to explain, how to set up GMAIL as your SMTP server in AEM to let you send emails out of your local author/publisher instance.
+
+Set up a GMail account (or use your own if you feel comfortable where you are storing the information).
+
+### Steps:
+
+1. Go to the Felix Console Config Manager(http://localhost:4502/system/console/configMgr)
+2. Scroll down and click to edit the Day CQ Mail Service OSGi config.
+3. Enter the following details
+
+| SMTP Server Host | smtp.gmail.com                         |
+| ---------------- | -------------------------------------- |
+| SMTP Server Port | 465                                    |
+| SMTP User        | your username (i.e. example@gmail.com) |
+| SMTP Password    | your Password                          |
+| From Address     | from address                           |
+| SMTP Use SSL     | true (i.e. example@gmail.com)          |
+
+4. Hit Save
+
+![aem-config](https://1.bp.blogspot.com/-9Vt6hjAsxn4/YNsooaPdcVI/AAAAAAAAAIA/B8jegqh6aaEBR60p1sdKnBVkZ7M2oilaACLcBGAsYHQ/w640-h302/gmail-as-smtp-server.png)
+
+5. Run a user through a workflow containing a group of which you are a member, or send out a newsletter to a group which you are a part of.
+
+You should receive the email in your inbox.
+
+It is worth noting that for production environments, you should set up a production grade SMTP service rather than use GMail.

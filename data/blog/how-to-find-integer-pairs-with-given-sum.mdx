@@ -1,0 +1,97 @@
+---
+title: 'How to find integer pairs with given sum'
+date: '2020-11-06'
+tags: ['Programming', 'Algorithms']
+draft: false
+summary: 'Algorithm to find integer pairs when sum is given'
+---
+
+This problem was recently asked in one of the interviews.
+
+Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+
+For example, given `[10, 15, 3, 7]` and k of `17`, return true since `10 + 7` is `17`.
+
+### Algorithm:
+
+- Sort the array in non-decreasing order
+- Initialize two index variables to find the candidate elements in the sorted array.
+- Initialize first to the leftmost index: l = 0
+- Initialize second the rightmost index: r = ar_size-1
+- Loop while l < r.
+- If (A[l] + A[r] == sum) then return 1
+- Else if( A[l] + A[r] < sum ) then l++
+- Else r--
+- No number in whole array - return 0
+
+### Solution:
+
+```java
+
+import java.util.Arrays;
+
+public class PairSumChallenge {
+
+	private static boolean pairSum(int arr[], int sum) {
+		int lIndex, rIndex;
+		Arrays.sort(arr);
+		System.out.println("Sorted Array :" + Arrays.toString(arr));
+		lIndex = 0;
+		rIndex = arr.length - 1;
+		while (lIndex < rIndex) {
+			if (arr[lIndex] + arr[rIndex] == sum) {
+				System.out.println("Pair with given sum " + sum + " is " + arr[lIndex] + "," + arr[rIndex]);
+				return true;
+			} else if (arr[lIndex] + arr[rIndex] < sum) {
+				lIndex++;
+			} else {
+				rIndex--;
+			}
+
+		}
+		return false;
+	}
+
+	public static void main(String[] args) {
+		int arr[] = { 1, -9, 10, 22, 6 };
+		int sum = 16;
+		pairSum(arr, sum);
+	}
+
+}
+
+
+Output:
+Sorted Array :[-9, 1, 6, 10, 22]
+Pair with given sum 16 is 6,10
+Note: If there is more than one pair having the given sum then the above algorithm fails, it will report only one.
+```
+
+### Another Solution:
+
+```java
+import java.util.HashSet;
+
+public class PairSumChallenge {
+
+ private static void pairSum(int arr[], int sum) {
+  HashSet hashSet = new HashSet<>();
+  for (int i : arr) {
+   if (hashSet.contains(sum - i)) {
+    System.out.println("Pair with given sum " + sum + " is " + (sum - i) + " ," + i);
+    hashSet.remove(sum - i); // Removing existing value from set to avoid duplicate pair to print
+   }
+   hashSet.add(i);
+  }
+
+ }
+
+ public static void main(String[] args) {
+  int arr[] = { 1, -9, 10, 22, 6 };
+  int sum = 16;
+  pairSum(arr, sum);
+ }
+
+}
+
+```

@@ -1,0 +1,109 @@
+---
+title: 'Sathyakam books download script'
+date: '2022-06-19'
+tags: ['Java', 'code', 'howto']
+draft: false
+summary: 'Java program to download sathyakam books.'
+---
+
+Sathyakam is an online library that has a huge collection of Telugu literature. I have written a Java class to download these books to local machine as pdfs.
+
+```Java
+package com.khalil.hashing;
+
+/**
+ * @author khali
+ *
+ */
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Element;
+
+import com.itextpdf.io.image.ImageDataFactory;
+import com.itextpdf.kernel.exceptions.PdfException;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Image;
+
+public class SathyakamBooks {
+	public static void main(String[] args) throws IOException {
+
+		String sathayakamUrl = "https://sathyakam.com/book.php?bId=";
+		String sathyakamBookUrl = "https://assets.sathyakam.com/images/books/";
+		String outDirectory = "D:\\Books\\";
+		SathyakamBooks sathyakamBooks = new SathyakamBooks();
+		String[] bookIds = { "790"};
+
+		for (String bookId : bookIds) {
+			String bookTitle = getSathyakamBookTitle(bookId, sathayakamUrl);
+			System.out.println(bookTitle);
+			sathyakamBooks.createBook(bookId, bookTitle, sathyakamBookUrl, outDirectory);
+		}
+
+	}
+
+	private void createBook(String bookId, String bookTitle, String sathyakamBookUrl, String outDirectory) {
+		PdfWriter writer = null;
+		PdfDocument pdf = null;
+		Document document = null;
+		int i = 1;
+		Image image;
+		try {
+			writer = new PdfWriter(outDirectory + bookTitle + ".pdf");
+			pdf = new PdfDocument(writer);
+			document = new Document(pdf);
+			while (true) {
+				image = new Image(ImageDataFactory.create(sathyakamBookUrl + bookId + "/" + i + ".jpg"));
+				System.out.println("Image created " + sathyakamBookUrl + bookId + "/" + i + ".jpg");
+				document.add(image);
+				i++;
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+
+		} catch (PdfException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (null != document) {
+				document.close();
+			}
+			if (null != pdf) {
+				pdf.close();
+			}
+			if (null != writer) {
+				try {
+					writer.setCompressionLevel(9);
+					writer.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				System.out.println(bookTitle + " created");
+			}
+		}
+
+	}
+
+	private static String getSathyakamBookTitle(String bookId, String sathayakamUrl) {
+		String title = null;
+		org.jsoup.nodes.Document jsoupDoc;
+		try {
+			jsoupDoc = Jsoup.connect(sathayakamUrl + bookId).get();
+			Element element = jsoupDoc.getElementById("tabs-container").child(0);
+			title = element.unwrap().toString();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return title;
+	}
+}
+```

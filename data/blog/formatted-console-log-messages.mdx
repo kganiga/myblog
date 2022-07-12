@@ -1,0 +1,35 @@
+---
+title: 'How to create formatted console log messages'
+date: '2020-12-02'
+tags: ['Developer Tools', 'Programming', 'JavaScript']
+draft: false
+summary: 'Learn how to print format messages on browser console.'
+---
+
+Have you ever opened developer tools on FB page? Did you see some warning messages in the Browser console that is formatted using custom styles and wondered? how it's done?
+
+![formatted-text-image](https://1.bp.blogspot.com/-Iw6_QQ3LSPM/X5_Jz0Qyy6I/AAAAAAAAAAU/srcL-mqOPdMV5ycqWJSTYKLTv1PmVSL8wCLcBGAsYHQ/s16000/facebook-console.PNG)
+
+This made me curious to look at how is such formatting done.
+
+You may already know that console messages are printed using console.log() method.
+An interesting part of FB console message is it is styled and also hyperlink of Facebook's self xss.
+
+After some research, I came to know that console API supports such functions.
+
+### How to Apply CSS Styles to message in console:
+
+To apply styles for the text in the console, we use the format specifier `%c`.
+
+```js
+console.log(
+  '%cHello World',
+  'font-variant: small-caps;color:blue; font-size:30px;font-weight:Bold;'
+)
+```
+
+All the text after `%c` will be formatted with the format arguments. You can your own CSS styles to format your text.
+
+![someimage](https://1.bp.blogspot.com/-N105Pc1YyG8/X5_KjUrN27I/AAAAAAAAAAg/CCXLFMyrY7k5tmXDRREFdER-Xc5cCAoSgCLcBGAsYHQ/s16000/formatted%2Bconsole%2Bmessage.PNG)
+
+Get more information from Google's [Styling Console Output with CSS](https://developers.google.com/web/tools/chrome-devtools/console/console-write#styling_console_output_with_css)
