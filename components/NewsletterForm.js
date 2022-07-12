@@ -11,7 +11,7 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
   const subscribe = async (e) => {
     e.preventDefault()
 
-    const res = await fetch(`/api/${siteMetadata.newsletter.provider}`, {
+    const res = await fetch(`https://emailoctopus.com/api/1.6/}`, {
       body: JSON.stringify({
         email: inputEl.current.value,
       }),
