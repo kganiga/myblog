@@ -7,11 +7,11 @@ const PostAuthor = () => {
       <div className="mx-auto max-w-4xl border-t pt-8">
         <div className="space-y-4 sm:grid sm:grid-cols-6 sm:items-start sm:gap-6 sm:space-y-0">
           <Image
-            className="float-right max-h-16 origin-bottom -rotate-12 rounded-3xl transition-transform hover:rotate-0 sm:float-none sm:my-6 sm:max-h-28"
+            className="float-right max-h-16 origin-bottom -rotate-8 rounded-3xl transition-transform hover:rotate-0 sm:float-right sm:my-6 sm:max-h-8 object-scale-down h-48 w-96"
             src="/static/img/avatar.jpg"
             alt="Khalil"
-            width={300}
-            height={300}
+            width={100}
+            height={100}
           />
           <div className="sm:col-span-5">
             <div className="space-y-6">

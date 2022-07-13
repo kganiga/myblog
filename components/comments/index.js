@@ -21,33 +21,43 @@ const DisqusComponent = dynamic(
 )
 
 const Comments = ({ frontMatter }) => {
-  let term
-  switch (
-    siteMetadata.comment.giscusConfig.mapping ||
-    siteMetadata.comment.utterancesConfig.issueTerm
-  ) {
-    case 'pathname':
-      term = frontMatter.slug
-      break
-    case 'url':
-      term = window.location.href
-      break
-    case 'title':
-      term = frontMatter.title
-      break
-  }
+  const comment = siteMetadata?.comment
+  if (!comment || Object.keys(comment).length === 0) return <></>
   return (
-    <>
-      {siteMetadata.comment && siteMetadata.comment.provider === 'giscus' && (
-        <GiscusComponent mapping={term} />
-      )}
-      {siteMetadata.comment && siteMetadata.comment.provider === 'utterances' && (
-        <UtterancesComponent issueTerm={term} />
-      )}
-      {siteMetadata.comment && siteMetadata.comment.provider === 'disqus' && (
+    <div id="comment">
+      {/* {siteMetadata.comment && siteMetadata.comment.provider === 'disqus' && (
         <DisqusComponent frontMatter={frontMatter} />
-      )}
-    </>
+      )} */}
+      {
+        <div className="post-comments">
+          <p className="py-8">
+            Comments are closed but If you want to respond, please send me a message over{' '}
+            <a
+              href={siteMetadata.messanger}
+              target="_blank"
+              rel="noreferrer"
+              className="underline decoration-slate-400"
+            >
+              facebook
+            </a>{' '}
+            or{' '}
+            <a
+              href={siteMetadata.twitter}
+              target="_blank"
+              rel="noreferrer"
+              className="underline decoration-slate-400"
+            >
+              tweet
+            </a>{' '}
+            or{' '}
+            <a href="mailto:admin@khalilganiga.com" className="underline decoration-slate-400">
+              send email
+            </a>
+            .
+          </p>
+        </div>
+      }
+    </div>
   )
 }
 

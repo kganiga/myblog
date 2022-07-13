@@ -8,10 +8,10 @@ const ContentSecurityPolicy = `
   script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google-analytics.com https://ssl.google-analytics.com https://www.googleadservices.com https://www.google.com https://googleads.g.doubleclick.net https://www.google-analytics.com/analytics.js https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9300442050014882;
   style-src 'self' 'unsafe-inline' *.googleapis.com cdn.jsdelivr.net pagead2.googlesyndication.com;
   frame-src youtube.com www.youtube.com https://bid.g.doubleclick.net;
-  img-src * blob: data:pagead2.googlesyndication.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.google.com;
+  img-src * blob: data:;
   media-src 'none';
   connect-src * https://pagead2.googlesyndication.com https://www.google-analytics.com;
-  font-src 'self' fonts.gstatic.com cdn.jsdelivr.net googleads.g.doubleclick.net tpc.googlesyndication.com;
+  font-src 'self' fonts.gstatic.com cdn.jsdelivr.nets;
 `
 
 const securityHeaders = [

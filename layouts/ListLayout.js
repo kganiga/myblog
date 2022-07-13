@@ -49,45 +49,48 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           </div>
         </div>
         <div className="my-4 flex-grow self-stretch md:flex">
-          <div className="site-main mt-4 flex-none rounded-lg bg-white p-4 sm:w-full md:mr-4 md:mt-0 md:w-2/3">
+          <div className="site-main mt-4 flex-none rounded-lg bg-gray p-4 sm:w-full md:mr-4 md:mt-0 md:w-2/3">
             <ul>
               {!filteredBlogPosts.length && 'No posts found.'}
               {displayPosts.map((frontMatter) => {
                 const { slug, date, title, summary, tags } = frontMatter
                 return (
-                  <li key={slug} className="py-8">
-                    <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                      {/* <dl>
+                  <>
+                    <li key={slug} className="py-8">
+                      <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                        {/* <dl>
                     <dt className="sr-only">Published on</dt>
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                       <time dateTime={date}>{formatDate(date)}</time>
                     </dd>
                   </dl> */}
-                      <div className="space-y-3 xl:col-span-3">
-                        <div>
-                          <dd className="flex space-x-1 pb-5 text-xs text-gray-500 dark:text-gray-400">
-                            <time dateTime={date}>{formatDate(date)}</time>
-                          </dd>
-                          <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                            <Link
-                              href={`/blog/${slug}`}
-                              className="text-gray-900 dark:text-gray-100"
-                            >
-                              {title}
-                            </Link>
-                          </h3>
+                        <div className="space-y-3 xl:col-span-3">
+                          <div>
+                            <dd className="flex space-x-1 pb-5 text-xs text-gray-500 dark:text-gray-400">
+                              <time dateTime={date}>{formatDate(date)}</time>
+                            </dd>
+                            <h3 className="text-2xl font-bold leading-8 tracking-tight">
+                              <Link
+                                href={`/blog/${slug}`}
+                                className="text-gray-900 dark:text-gray-100"
+                              >
+                                {title}
+                              </Link>
+                            </h3>
+                          </div>
+                          <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                            {summary}
+                          </div>
+                          <div className="flex flex-wrap py-4">
+                            {tags.map((tag) => (
+                              <Tag key={tag} text={tag} />
+                            ))}
+                          </div>
                         </div>
-                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                          {summary}
-                        </div>
-                        <div className="flex flex-wrap py-4">
-                          {tags.map((tag) => (
-                            <Tag key={tag} text={tag} />
-                          ))}
-                        </div>
-                      </div>
-                    </article>
-                  </li>
+                      </article>
+                    </li>
+                    <hr className="border-gray-200 dark:border-white-700 pt-5" />
+                  </>
                 )
               })}
             </ul>

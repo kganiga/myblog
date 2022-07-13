@@ -13,13 +13,14 @@ const siteMetadata = {
   email: 'admin@khalilganiga.com',
   github: 'https://github.com/kganiga',
   twitter: 'https://twitter.com/Im_Khalil',
+  messanger: 'https://m.me/khalilbasha.g',
   linkedin: 'https://www.linkedin.com/in/khalilg',
   locale: 'en-US',
   analytics: {
     // supports plausible, simpleAnalytics or googleAnalytics
     plausibleDataDomain: false, // e.g. tailwind-nextjs-starter-blog.vercel.app
     simpleAnalytics: false, // true or false
-    googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
+    googleAnalyticsId: 'G-FENB3RHBGQ', // e.g. UA-000000-2 or G-XXXXXXX
   },
   newsletter: {
     // Please add your .env file and modify it according to your selection
