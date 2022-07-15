@@ -26,13 +26,17 @@ export default function Gallery({ feed }) {
               }
               return !image.media_url.includes('video') ? (
                 <div className="overflow-hidden rounded shadow-lg">
-                  <Image
-                    className="w-full grayscale filter transition duration-200 hover:filter-none"
-                    src={image.media_url}
-                    alt={caption}
-                    width={500}
-                    height={500}
-                  />
+                  <a href={image.permalink} target="_blank" rel="noreferrer">
+                    {' '}
+                    <Image
+                      className="w-full grayscale filter transition duration-200 hover:filter-none"
+                      src={image.media_url}
+                      alt={caption}
+                      width={500}
+                      height={500}
+                    />
+                  </a>
+
                   <div className="px-6 py-4">
                     <p className="text-base text-gray-700">{caption}</p>
                   </div>

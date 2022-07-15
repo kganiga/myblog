@@ -4,7 +4,7 @@ const siteMetadata = {
   authorDescription: `Just another programmer.. This blog expresses my views of various technologies
   and scenarios I have come across in realtime.`,
   headerTitle: 'Quasilinear Thoughts',
-  description: 'A developers log book.',
+  description: " - A developer's log book.",
   language: 'en-us',
   siteUrl: 'https://www.khalilganiga.netlify.app',
   siteRepo: '#',
