@@ -18,7 +18,7 @@ const PostAuthor = () => {
               <div className="space-y-1 text-lg leading-6">
                 <h3 className="text-3xl font-extrabold tracking-tight">{siteMetadata.author}</h3>
               </div>
-              <div className="prose prose-sm prose-slate pb-4">
+              <div className=" text-sm  pb-4">
                 <p>{siteMetadata.authorDescription}</p>
                 <p>Keep watching this space for more updates.</p>
               </div>
