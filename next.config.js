@@ -11,7 +11,7 @@ const ContentSecurityPolicy = `
   img-src * blob: data:;
   media-src 'none';
   connect-src *  https://www.google-analytics.com;
-  font-src 'self' fonts.gstatic.com cdn.jsdelivr.nets;
+  font-src 'self' fonts.gstatic.com cdn.jsdelivr.net;
 `
 
 const securityHeaders = [

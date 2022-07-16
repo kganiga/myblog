@@ -19,6 +19,9 @@ export default function Footer() {
           <div>{` • `}</div>
           <Link href="/">{siteMetadata.title}</Link>
         </div>
+        <div className="flex mb-2 space-x-2 text-sm text-gray-500 dark:text-gray-400">
+          All rights reserved.
+        </div>
       </div>
     </footer>
   )

@@ -5,6 +5,7 @@ import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
 import Script from 'next/script'
+import Image from 'next/image'
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
   const [searchValue, setSearchValue] = useState('')
@@ -56,7 +57,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                 const { slug, date, title, summary, tags } = frontMatter
                 return (
                   <>
-                    <li key={slug} className="py-8">
+                    <li key={slug} className="py-8 rounded shadow-lg pl-10">
                       <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                         {/* <dl>
                     <dt className="sr-only">Published on</dt>
@@ -124,6 +125,21 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               {/* <Script strategy="lazyOnload" id="gadsense-script">
                 (adsbygoogle = window.adsbygoogle || []).push({});
               </Script>{' '} */}
+              {/* <div className=" pt-10 py-8 px-8 max-w-sm mx-auto bg-white dark:text-gray-100 rounded-xl space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+                <Image
+                  className="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0"
+                  src="/static/img/avatar.jpg"
+                  alt="Khalil"
+                  width={100}
+                  height={100}
+                />
+                <div className="text-center space-y-2 sm:text-left">
+                  <div className="space-y-0.5">
+                    <p className="text-lg text-black font-semibold ">{siteMetadata.author}</p>
+                    <p className="text-slate-500 font-medium ">{siteMetadata.authorDescription}</p>
+                  </div>
+                </div>
+              </div> */}
             </>
           </div>
         </div>

@@ -22,7 +22,7 @@ export default function Home({ posts }) {
         <div className="flex flex-col items-center my-6 xl:flex-row gap-x-12 xl:mb-12">
           <div className="pt-6">
             <h1 className="pb-6 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-              Hi, I’m Khalil Ganiga
+              hi, I’m <span className="text-slate-600">Khalil Ganiga</span>
             </h1>
 
             <h2 className="text-lg prose text-gray-600 dark:text-gray-400">
@@ -49,7 +49,7 @@ export default function Home({ posts }) {
               return index % 2 === 0 ? (
                 <>
                   <div className="flex flex-row-reverse md:contents">
-                    <div className="col-start-1 col-end-5 my-4 ml-auto w-full  border border-gray-300 p-4">
+                    <div className="col-start-1 col-end-5 my-4 ml-auto w-full shadow-lg shadow-blue-500/50 border border-gray-300 p-4">
                       <dd className="flex space-x-1 pb-5 text-xs text-gray-500 dark:text-gray-400">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
@@ -73,7 +73,7 @@ export default function Home({ posts }) {
 
                     <div className="relative col-start-5 col-end-6 mr-10 md:mx-auto">
                       <div className="flex h-full w-6 items-center justify-center">
-                        <div className="pointer-events-none h-full w-full bg-gray-300" />
+                        <div className="pointer-events-none h-full w-full bg-gray-300 " />
                       </div>
                       <div className="shadowborder-slate-500 absolute top-1/2 -mt-3 h-6 w-6 rounded-full border-2 border-l-8 border-slate-600 bg-gray-100" />
                     </div>
@@ -84,12 +84,12 @@ export default function Home({ posts }) {
                   {' '}
                   <div className="flex md:contents">
                     <div className="relative col-start-5 col-end-6 mr-10 md:mx-auto">
-                      <div className="flex h-full w-6 items-center justify-center">
+                      <div className="flex h-full w-6 items-center justify-center ">
                         <div className="pointer-events-none h-full w-0.5 bg-gray-300" />
                       </div>
                       <div className="absolute top-1/2 -mt-3 h-6 w-6 rounded-full border-2 border-r-8 border-slate-600 border-slate-600 bg-gray-100 shadow" />
                     </div>
-                    <div className="col-start-6 col-end-10 my-4 mr-auto w-full  border border-gray-300 p-4">
+                    <div className="col-start-6 col-end-10 my-4 mr-auto w-full shadow-lg shadow-blue-500/50 border border-gray-300 p-4">
                       <dd className="flex space-x-1 pb-5 text-xs text-gray-500 dark:text-gray-400">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
